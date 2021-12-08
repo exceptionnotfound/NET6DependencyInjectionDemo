@@ -5,14 +5,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DependencyInjectionNET6Demo.Pages
 {
-    public class IndexModel : PageModel
+    public class MoviesPageModel : PageModel
     {
         private readonly IMovieRepository _movieRepo;
         private readonly ICacheService _cache;
         private readonly ICustomLogger _logger;
         public List<Movie> Movies { get; set; } = new List<Movie>();
 
-        public IndexModel(IMovieRepository movieRepo, ICacheService cache, ICustomLogger logger)
+        public MoviesPageModel(IMovieRepository movieRepo, ICacheService cache, ICustomLogger logger)
         {
             _movieRepo = movieRepo;
             _cache = cache;

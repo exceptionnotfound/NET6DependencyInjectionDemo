@@ -2,6 +2,7 @@ using DependencyInjectionNET6Demo.Repositories;
 using DependencyInjectionNET6Demo.Repositories.Interfaces;
 using DependencyInjectionNET6Demo.Services;
 using DependencyInjectionNET6Demo.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<ICustomLogger, CustomLogger>();
 builder.Services.AddSingleton<ICacheService, CacheService>();
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages().AddRazorPagesOptions(options =>
+{
+    options.Conventions.AddPageRoute("/Movies", "");
+});
 
 var app = builder.Build();
 
