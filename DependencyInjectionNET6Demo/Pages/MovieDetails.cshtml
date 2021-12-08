@@ -1,0 +1,19 @@
+﻿@page
+@model DependencyInjectionNET6Demo.Pages.MovieDetailsModel
+@{
+}
+
+<h2>Movie Details</h2>
+
+<dl>
+    <dt>ID</dt>
+    <dd>@Model.Movie.ID</dd>
+    <dt>Title</dt>
+    <dd>@Model.Movie.Title</dd>
+    <dt>Release Date</dt>
+    <dd>@Model.Movie.ReleaseDate.ToShortDateString()</dd>
+    <dt>Running Time</dt>
+    <dd>@Model.Movie.RuntimeMinutes min</dd>
+    <dt>Director</dt>
+    <dd>@Model.Movie.Director</dd>
+</dl>
