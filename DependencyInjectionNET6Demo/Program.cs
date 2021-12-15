@@ -7,8 +7,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+//Transient services are created by the container every time they need to be injected.
 builder.Services.AddTransient<IMovieRepository, MovieRepository>();
+
+//Uncomment the below line
+builder.Services.AddTransient<IActorRepository, ActorRepository>();
+
+//Scoped services are created once per request.
+//That means, if a dependency needs to be injected twice in the same request,
+//both injections will receive the same instance.
 builder.Services.AddScoped<ICustomLogger, CustomLogger>();
+
+//Singleton services are only created once; all injections receive the same instance.
 builder.Services.AddSingleton<ICacheService, CacheService>();
 builder.Services.AddRazorPages().AddRazorPagesOptions(options =>
 {

@@ -5,6 +5,12 @@ namespace DependencyInjectionNET6Demo.Repositories
 {
     public class MovieRepository : IMovieRepository
     {
+        private readonly IActorRepository _actorRepo;
+
+        public MovieRepository(IActorRepository actorRepo)
+        {
+            _actorRepo = actorRepo;
+        }
         public List<Movie> GetAll()
         {
             return new List<Movie>()

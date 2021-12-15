@@ -5,40 +5,40 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DependencyInjectionNET6Demo.Pages
 {
-    public class MoviesPageModel : PageModel
+public class MoviesPageModel : PageModel
+{
+    private readonly IMovieRepository _movieRepo;
+    private readonly ICacheService _cache;
+    private readonly ICustomLogger _logger;
+    public List<Movie> Movies { get; set; } = new List<Movie>();
+
+    public MoviesPageModel(IMovieRepository movieRepo, ICacheService cache, ICustomLogger logger)
     {
-        private readonly IMovieRepository _movieRepo;
-        private readonly ICacheService _cache;
-        private readonly ICustomLogger _logger;
-        public List<Movie> Movies { get; set; } = new List<Movie>();
+        _movieRepo = movieRepo;
+        _cache = cache;
+        _logger = logger;
+    }
 
-        public MoviesPageModel(IMovieRepository movieRepo, ICacheService cache, ICustomLogger logger)
+    public void OnGet()
+    {
+        try
         {
-            _movieRepo = movieRepo;
-            _cache = cache;
-            _logger = logger;
+            var movies = _cache.Get<List<Movie>>("allMovies");
+
+            if (movies == null)
+            {
+                Movies = _movieRepo.GetAll();
+                _cache.Add("allMovies", Movies);
+            }
+            else
+            {
+                Movies = movies;
+            }
         }
-
-        public void OnGet()
+        catch(Exception ex)
         {
-            try
-            {
-                var movies = _cache.Get<List<Movie>>("allMovies");
-
-                if (movies == null)
-                {
-                    Movies = _movieRepo.GetAll();
-                    _cache.Add("allMovies", Movies);
-                }
-                else
-                {
-                    Movies = movies;
-                }
-            }
-            catch(Exception ex)
-            {
-                _logger.Log(ex);
-            }
+            _logger.Log(ex);
         }
     }
+}
 }
