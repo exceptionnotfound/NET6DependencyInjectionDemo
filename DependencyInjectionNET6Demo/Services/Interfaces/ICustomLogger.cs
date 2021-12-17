@@ -1,7 +1,7 @@
-﻿namespace DependencyInjectionNET6Demo.Services.Interfaces
+﻿namespace DependencyInjectionNET6Demo.Services.Interfaces;
+
+public interface ICustomLogger
 {
-    public interface ICustomLogger
-    {
-        void Log(Exception ex);
-    }
+    void Log(Exception ex);
+    void Log(string info);
 }
