@@ -27,14 +27,12 @@ builder.Services.AddRazorPages().AddRazorPagesOptions(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+//The below code means that, when running in a development environment, exceptions will not be handled
+//by the Error.cshtml page, and will instead be shown to the user.
+if (!app.Environment.IsDevelopment()) //If the app is NOT running in a development environment
 {
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    app.UseExceptionHandler("/Error"); //Route all exceptions to the Error.csthml Razor Page.
 }
-
 
 app.UseHttpsRedirection();
 
