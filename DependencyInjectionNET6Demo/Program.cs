@@ -1,8 +1,3 @@
-using DependencyInjectionNET6Demo.Repositories;
-using DependencyInjectionNET6Demo.Repositories.Interfaces;
-using DependencyInjectionNET6Demo.Services;
-using DependencyInjectionNET6Demo.Services.Interfaces;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

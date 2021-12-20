@@ -12,9 +12,9 @@ namespace DependencyInjectionNET6Demo.Pages
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
-        private readonly ILogger<ErrorModel> _logger;
+        private readonly CustomLogger _logger;
 
-        public ErrorModel(ILogger<ErrorModel> logger)
+        public ErrorModel(CustomLogger logger)
         {
             _logger = logger;
         }
@@ -22,6 +22,7 @@ namespace DependencyInjectionNET6Demo.Pages
         public void OnGet()
         {
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+            _logger.Log("A clear, custom error message");
         }
     }
 }

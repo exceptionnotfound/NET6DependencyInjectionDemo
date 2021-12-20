@@ -1,6 +1,4 @@
-﻿using DependencyInjectionNET6Demo.Repositories.Interfaces;
-
-namespace DependencyInjectionNET6Demo.Repositories;
+﻿namespace DependencyInjectionNET6Demo.Repositories;
 
 public class ActorRepository : IActorRepository 
 {

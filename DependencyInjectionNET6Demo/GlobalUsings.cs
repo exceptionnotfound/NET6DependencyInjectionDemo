@@ -1,0 +1,5 @@
+﻿global using DependencyInjectionNET6Demo.Models;
+global using DependencyInjectionNET6Demo.Repositories.Interfaces;
+global using DependencyInjectionNET6Demo.Repositories;
+global using DependencyInjectionNET6Demo.Services.Interfaces;
+global using DependencyInjectionNET6Demo.Services;

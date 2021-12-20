@@ -1,6 +1,4 @@
-﻿using DependencyInjectionNET6Demo.Services.Interfaces;
-
-namespace DependencyInjectionNET6Demo.Services;
+﻿namespace DependencyInjectionNET6Demo.Services;
 
 public class CustomLogger : ICustomLogger
 {

@@ -1,8 +1,4 @@
-﻿using DependencyInjectionNET6Demo.Models;
-using DependencyInjectionNET6Demo.Repositories.Interfaces;
-using DependencyInjectionNET6Demo.Services.Interfaces;
-
-namespace DependencyInjectionNET6Demo.Repositories;
+﻿namespace DependencyInjectionNET6Demo.Repositories;
 
 public class MovieRepository : IMovieRepository
 {

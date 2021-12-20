@@ -1,7 +1,4 @@
-﻿using DependencyInjectionNET6Demo.Models;
-using DependencyInjectionNET6Demo.Repositories.Interfaces;
-using DependencyInjectionNET6Demo.Services.Interfaces;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DependencyInjectionNET6Demo.Pages;
 

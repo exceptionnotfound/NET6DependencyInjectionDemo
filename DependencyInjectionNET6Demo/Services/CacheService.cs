@@ -1,5 +1,4 @@
-﻿using DependencyInjectionNET6Demo.Services.Interfaces;
-using Microsoft.Extensions.Caching.Memory;
+﻿using Microsoft.Extensions.Caching.Memory;
 
 namespace DependencyInjectionNET6Demo.Services;
 

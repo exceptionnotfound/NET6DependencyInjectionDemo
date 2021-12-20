@@ -1,7 +1,4 @@
-﻿using DependencyInjectionNET6Demo.Repositories;
-using DependencyInjectionNET6Demo.Repositories.Interfaces;
-
-namespace DependencyInjectionNET6Demo.Extensions;
+﻿namespace DependencyInjectionNET6Demo.Extensions;
 
 public static class ServiceExtensions
 {
