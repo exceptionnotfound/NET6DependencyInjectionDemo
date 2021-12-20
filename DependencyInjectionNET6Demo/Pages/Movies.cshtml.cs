@@ -3,8 +3,8 @@ using DependencyInjectionNET6Demo.Repositories.Interfaces;
 using DependencyInjectionNET6Demo.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace DependencyInjectionNET6Demo.Pages
-{
+namespace DependencyInjectionNET6Demo.Pages;
+
 public class MoviesPageModel : PageModel
 {
     private readonly IMovieRepository _movieRepo;
@@ -40,5 +40,4 @@ public class MoviesPageModel : PageModel
             _logger.Log(ex);
         }
     }
-}
 }

@@ -1,8 +1,7 @@
-﻿namespace DependencyInjectionNET6Demo.Services.Interfaces
+﻿namespace DependencyInjectionNET6Demo.Services.Interfaces;
+
+public interface ICacheService
 {
-    public interface ICacheService
-    {
-        void Add(string key, object value);
-        T Get<T>(string key);
-    }
+    void Add(string key, object value);
+    T Get<T>(string key);
 }

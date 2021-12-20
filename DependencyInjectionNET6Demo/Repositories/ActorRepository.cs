@@ -1,16 +1,15 @@
 ﻿using DependencyInjectionNET6Demo.Repositories.Interfaces;
 
-namespace DependencyInjectionNET6Demo.Repositories
+namespace DependencyInjectionNET6Demo.Repositories;
+
+public class ActorRepository : IActorRepository 
 {
-    public class ActorRepository : IActorRepository 
-    {
-        //Uncomment the below lines to cause a circular dependency.
+    //Uncomment the below lines to cause a circular dependency.
 
-        //private readonly IMovieRepository _movieRepo;
+    //private readonly IMovieRepository _movieRepo;
 
-        //public ActorRepository(IMovieRepository movieRepo)
-        //{
-        //    _movieRepo = movieRepo;
-        //}
-    }
+    //public ActorRepository(IMovieRepository movieRepo)
+    //{
+    //    _movieRepo = movieRepo;
+    //}
 }

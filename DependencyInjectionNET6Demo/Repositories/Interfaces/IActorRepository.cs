@@ -1,7 +1,3 @@
-﻿namespace DependencyInjectionNET6Demo.Repositories.Interfaces
-{
-    public interface IActorRepository
-    {
-        
-    }
-}
+﻿namespace DependencyInjectionNET6Demo.Repositories.Interfaces;
+
+public interface IActorRepository { }
